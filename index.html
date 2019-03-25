@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Amazon Price Generator</title>
+</head>
+
+<body>
+    <h1>Amazon Price Generator</h1>
+    <script>
+        let itemName = prompt("What is the name of the item?");
+        let basePrice = prompt("What is the base price?");
+        let blackFriday = prompt('Is today "Black Friday" ?');
+        let searchEngine = prompt("Did the purchaser find the product through a search engine?");
+        let compare = prompt("Did purchaser visit a comparison - shopping site?");
+        let finalPrice = basePrice;
+
+        let alertText = "The base price for " + itemName + " is " + basePrice + ".";
+        if (searchEngine === "yes"); {
+            alertText += "The purchaser came through a search engine, so we will increase the price by 1% to pay the search engine. ";
+            finalPrice = finalPrice * 1.01;
+        }
+        if (compare === "yes"); {
+            alertText += "This purchaser is a comparison shopper, so we will reduce the price by 10%. ";
+            finalPrice = finalPrice * .10;
+        }
+        if (blackFriday === "yes") {
+            alertText += "Since it's Black Friday, we will reduce the price by 25%. ";
+            finalPrice = finalPrice * 0.75;
+        }
+        alertText += "The final price is " + finalPrice + ".";
+
+        alert(alertText);
+    </script>
+</body>
+
+</html>
